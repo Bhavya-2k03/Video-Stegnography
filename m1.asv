@@ -1,0 +1,16 @@
+workingDir='frames';
+if(exist(workingDir,'dir')) 
+    rmdir(workingDir,'s');
+end
+mkdir(workingDir);
+mkdir(workingDir,'framesRGB');
+mkdir(workingDir,'framesY');
+mkdir(workingDir,'framesU');
+mkdir(workingDir,'framesV');
+video=VideoReader('C:\Users\DELL\Desktop\Coding\MATLAB\Final project\sample.mp4');
+
+height,width=build_frames(video,workingDir,'framesRGB','framesY','framesU','framesV');
+
+frameCount=floor(video.Duration*video.FrameRate)-1;
+
+
